@@ -48,10 +48,12 @@ The `buttercup` instruction checks whether the value of a variable `a` lies with
 This instruction is logically equivalent to:
 
 ```java
-if (a >= min && a <= max) {
-    // condition is satisfied
+if (a < min) {
+    return min;
+} else if (a > max) {
+    return max;
 } else {
-    // condition is not satisfied
+    return a;
 }
 ```
 
