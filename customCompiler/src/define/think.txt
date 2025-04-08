@@ -1,0 +1,32 @@
+buttercup(a,min,max)
+
+if (a<min){
+	return min;
+} else if (a>max){
+	return max;
+} else {
+	return a;
+}
+
+mov r0,a
+mov r1,min
+mov r2,max
+
+cmp r0,r1
+jl return_min
+
+cmp r0,r2
+jg return_max
+
+mov r3 r0
+jmp end_buttercup
+
+return_min:
+mov r3,r1
+jmp end_buttercup
+
+return_max:
+mov r3,r2
+jmp end_buttercup
+
+end_buttercup:
